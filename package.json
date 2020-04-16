@@ -1,0 +1,14 @@
+{
+  "name": "coinbase-oracle-test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "open-oracle-reporter": "^1.0.2",
+    "superagent": "^5.2.2"
+  },
+  "scripts": {
+    "oracle-fetch": "node oracle-fetch"
+  }
+}
