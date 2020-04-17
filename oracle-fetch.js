@@ -1,6 +1,8 @@
 require('dotenv').config();
 const superagent = require('superagent');
 const crypto = require('crypto');
+const Web3 = require('web3');
+const web3 = new Web3(null); // This is just for encoding, etc.
 
 const key_id = process.env.API_KEY_ID;
 const secret = process.env.API_SECRET;
@@ -39,5 +41,11 @@ superagent
       console.log(err);
       return;
     }
-    console.log(res.body);
+    console.log('response:', res.body);
+
+    // Check signatory
+    const { messages, signatures } = res.body;
+    const hash = web3.utils.keccak256(messages[0]);
+    const signatory = web3.eth.accounts.recover(hash, signatures[0]);
+    console.log('signatory:', signatory);
   });

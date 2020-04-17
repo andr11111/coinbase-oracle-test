@@ -9,6 +9,8 @@
     "superagent": "^5.2.2"
   },
   "scripts": {
-    "oracle-fetch": "node oracle-fetch"
+    "oracle-fetch": "node oracle-fetch",
+    "recover": "node recover",
+    "decode": "node decode"
   }
 }
