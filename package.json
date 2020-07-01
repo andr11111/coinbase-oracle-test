@@ -13,6 +13,7 @@
   },
   "scripts": {
     "oracle-fetch": "node oracle-fetch",
+    "oracle-fetch-xtz": "node oracle-fetch-xtz",
     "recover": "node recover",
     "decode": "node decode"
   }

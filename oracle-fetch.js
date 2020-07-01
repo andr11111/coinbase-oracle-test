@@ -11,7 +11,7 @@ const passphrase = process.env.API_PASSPHRASE;
 const apiURI = 'https://api.pro.coinbase.com';
 
 var timestamp = Date.now() / 1000;
-var requestPath = '/oracle/xtz';
+var requestPath = '/oracle';
 
 var method = 'GET';
 
@@ -44,8 +44,8 @@ superagent
     console.log('response:', res.body);
 
     // Check signatory
-    /* const { messages, signatures } = res.body;
+    const { messages, signatures } = res.body;
     const hash = web3.utils.keccak256(messages[0]);
     const signatory = web3.eth.accounts.recover(hash, signatures[0]);
-    console.log('signatory:', signatory); */
+    console.log('signatory:', signatory);
   });
